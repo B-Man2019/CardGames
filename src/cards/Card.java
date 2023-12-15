@@ -1,3 +1,9 @@
+package cards;
+
+import cards.enums.Faces;
+import cards.enums.Suits;
+
+
 public class Card {
     Suits suit;
     Faces face;

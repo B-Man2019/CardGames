@@ -1,4 +1,9 @@
+package cards;
+
 import java.util.ArrayList;
+
+import cards.enums.Faces;
+import cards.enums.Suits;
 
 public class DeckOfCards {
     ArrayList<Card> deck = new ArrayList<Card>();

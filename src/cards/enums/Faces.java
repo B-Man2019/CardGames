@@ -1,3 +1,5 @@
+package cards.enums;
+
 public enum Faces {
     ACE,
     TWO,
