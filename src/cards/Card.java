@@ -16,6 +16,14 @@ public class Card {
         this.face = face;
     }
 
+    public Faces getFace() {
+        return face;
+    }
+
+    public Suits getSuit() {
+        return suit;
+    }
+
     public String toString() {
         return suit + "\t" + face;
     }

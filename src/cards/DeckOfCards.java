@@ -6,7 +6,7 @@ import cards.enums.Faces;
 import cards.enums.Suits;
 
 public class DeckOfCards {
-    ArrayList<Card> deck = new ArrayList<Card>();
+    private ArrayList<Card> deck = new ArrayList<Card>();
 
     public DeckOfCards() {
         for (Suits suit: Suits.values()) { // .values creates an array of the enums
@@ -16,8 +16,13 @@ public class DeckOfCards {
         }
     }
 
-    public DeckOfCards(boolean empty) {
-        // leave empty, just create an empty ArrayList
+    public DeckOfCards(int num) {
+        Suits[] suits = Suits.values();
+        Faces[] faces = Faces.values();
+
+        for (int i = 0; i <= num; i++) {
+            
+        }
     }
 
     // *****************************
