@@ -21,7 +21,7 @@ public class DeckOfCards {
         Faces[] faces = Faces.values();
 
         for (int i = 0; i <= num; i++) {
-            
+            deck.add(new Card(suits[i], faces[i]));
         }
     }
 

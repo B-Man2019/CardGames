@@ -14,6 +14,10 @@ public class Player {
         numCards += num;
     }
 
+    public static int getNumCards() {
+        return numCards;
+    }
+
     
     public static Card drawCard(DeckOfCards deck) {
         return deck.getCard(0);
