@@ -75,6 +75,24 @@ public class DeckOfCards {
         deck.remove(index);
     }
 
+    public Card drawCard() {
+        Card card = deck.get(0);
+        deck.remove(0);
+        return card;
+    }
+
+    public Card[] drawCard(int num) {
+        int count = 0; 
+
+        Card[] cards = new Card[num];
+        while (deck.size() > 0 && count < num) {
+            cards[count] = deck.get(0);
+            deck.remove(0);
+            count++;
+        }
+
+        return cards;
+    }
 
 
     public String toString() {

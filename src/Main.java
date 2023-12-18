@@ -1,7 +1,5 @@
 import io.Menu;
-import war.Player;
 import war.War;
-import war.WarManager;
 
 public class Main {
     public static void main(String[] args) {

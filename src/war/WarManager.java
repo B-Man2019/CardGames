@@ -18,14 +18,15 @@ public class WarManager {
         computerDeck = new DeckOfCards(26);
         playerDeck.shuffle();
         computerDeck.shuffle();
+        
     }
 
     public void nextRound() {
         States state;
 
-        Card computerCard = drawCard(computerDeck);
-        Card playerCard = drawCard(playerDeck);
-//      startCountdown();
+        Card computerCard = computerDeck.drawCard();
+        Card playerCard = playerDeck.drawCard();
+        startCountdown();
 
         System.out.print(playerCard + "\nPlayer\n" + computerCard + "\nComputer\n");
 
@@ -63,8 +64,29 @@ public class WarManager {
         System.out.println(warActionMenu);
         warActionMenu.getInput();
         startCountdown();
-        // TODO: Finish War action
-        return States.WAR;
+        // simulate drawing 3 cards
+        playerDeck.drawCard(3);
+        computerDeck.drawCard(3);
+
+        Card computerCard = computerDeck.drawCard();
+        Card playerCard = playerDeck.drawCard();
+
+        System.out.print(playerCard + "\nPlayer\n" + computerCard + "\nComputer\n");
+
+        int playerValue = playerCard.getFace().getValue();
+        int computerValue = computerCard.getFace().getValue();
+
+        if (playerValue > computerValue) {
+            // 2 cards drawn before + 6 cards drawn for war + 2 more drawn for war
+            player.incrementCards(10);
+            return States.WIN;
+        } else if (playerValue < computerValue) {
+            computer.incrementCards(10);
+            return States.LOSE;
+        } else {
+            startWar();
+            return States.WAR;
+        }
 
     }
 
@@ -76,17 +98,10 @@ public class WarManager {
             } catch (Exception e) {
                 System.out.println("An error occurred while making the countdown.");
             }
-
         }
     }
 
     public int getPlayerDeckSize() {
         return playerDeck.deckSize();
-    }
-
-    public Card drawCard(DeckOfCards deck) {
-        Card card = deck.getCard(0);
-        deck.removeCard(0);
-        return card;
     }
 }

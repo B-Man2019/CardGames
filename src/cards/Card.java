@@ -27,6 +27,7 @@ public class Card {
     }
 
     public String toString() {
+        if (face.getFormat() != "10") {
         return """
                 _______
                 |%s    |
@@ -35,6 +36,18 @@ public class Card {
                 |     |
                 |    %s|
                 |_____|
-                """.formatted(suit.getFormat(), face.getValue(), suit.getFormat());
+                """.formatted(suit.getFormat(), face.getFormat(), suit.getFormat());
+        } else {
+            return """
+                _______
+                |%s    |
+                |     |
+                |  %s |
+                |     |
+                |    %s|
+                |_____|
+                """.formatted(suit.getFormat(), face.getFormat(), suit.getFormat());
+        }
+
     }
 }
