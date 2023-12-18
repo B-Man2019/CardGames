@@ -54,7 +54,8 @@ public class Menu {
 
     public String toString() {
         String str = "";
-
+        System.out.println(title);
+        
         for (int i = 0; i < actionContents.size(); i++) {
             str += ((i + 1) + ". " + actionContents.get(i) + "\n");
         }

@@ -6,7 +6,7 @@ import cards.enums.Faces;
 import cards.enums.Suits;
 
 public class DeckOfCards {
-    ArrayList<Card> deck = new ArrayList<Card>();
+    private ArrayList<Card> deck = new ArrayList<Card>();
 
     public DeckOfCards() {
         for (Suits suit: Suits.values()) { // .values creates an array of the enums
@@ -16,8 +16,26 @@ public class DeckOfCards {
         }
     }
 
-    public DeckOfCards(boolean empty) {
-        // leave empty, just create an empty ArrayList
+    public DeckOfCards(int num) {
+        Suits[] suits = Suits.values();
+        Faces[] faces = Faces.values();
+
+        int count = 0;
+
+        for (int r = 0; r < suits.length; r++) {
+            for (int c = 0; c < faces.length; c++) {
+                deck.add(new Card(suits[r], faces[c]));
+                count++;
+
+                if (count == num) {
+                    break;
+                }
+            }
+
+            if (count == num) {
+                break;
+            }
+        }
     }
 
     // *****************************
@@ -57,6 +75,24 @@ public class DeckOfCards {
         deck.remove(index);
     }
 
+    public Card drawCard() {
+        Card card = deck.get(0);
+        deck.remove(0);
+        return card;
+    }
+
+    public Card[] drawCard(int num) {
+        int count = 0; 
+
+        Card[] cards = new Card[num];
+        while (deck.size() > 0 && count < num) {
+            cards[count] = deck.get(0);
+            deck.remove(0);
+            count++;
+        }
+
+        return cards;
+    }
 
 
     public String toString() {
