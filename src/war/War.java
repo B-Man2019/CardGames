@@ -8,6 +8,14 @@ public class War {
         WarManager warManager = new WarManager();
 
         Menu warMenu = new Menu("Welcome to War!");
-        warMenu.addAction(() -> WarManager.nextRound(), "Next Round");
+        warMenu.addAction(warManager::nextRound, "Next Round");
+        warMenu.addAction(() -> System.exit(0), "Quit");
+
+        while (warManager.getPlayerDeckSize() > 0) {
+            System.out.println(warMenu);
+            warMenu.getInput();
+        }
+
+
     }
 }

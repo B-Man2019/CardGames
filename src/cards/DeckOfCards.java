@@ -20,8 +20,21 @@ public class DeckOfCards {
         Suits[] suits = Suits.values();
         Faces[] faces = Faces.values();
 
-        for (int i = 0; i <= num; i++) {
-            deck.add(new Card(suits[i], faces[i]));
+        int count = 0;
+
+        for (int r = 0; r < suits.length; r++) {
+            for (int c = 0; c < faces.length; c++) {
+                deck.add(new Card(suits[r], faces[c]));
+                count++;
+
+                if (count == num) {
+                    break;
+                }
+            }
+
+            if (count == num) {
+                break;
+            }
         }
     }
 

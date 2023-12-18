@@ -4,22 +4,20 @@ import cards.Card;
 import cards.DeckOfCards;
 
 public class Player {
-    private static int numCards;
+    public Player() {
+        // leave empty
+    }
+    private int numCards;
 
-    public static void incrementCards() {
+    public void incrementCards() {
         numCards++;
     }
 
-    public static void incrementCards(int num) {
+    public void incrementCards(int num) {
         numCards += num;
     }
 
-    public static int getNumCards() {
+    public int getNumCards() {
         return numCards;
-    }
-
-    
-    public static Card drawCard(DeckOfCards deck) {
-        return deck.getCard(0);
     }
 }

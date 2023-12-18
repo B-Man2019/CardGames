@@ -1,5 +1,7 @@
 import io.Menu;
+import war.Player;
 import war.War;
+import war.WarManager;
 
 public class Main {
     public static void main(String[] args) {
@@ -7,8 +9,9 @@ public class Main {
         mainMenu.addAction(() -> War.main(), "Play War");
         mainMenu.addAction(() -> System.exit(0), "Quit");
         // System.exit terminates the JVM
+            System.out.println(mainMenu);
+            mainMenu.getInput();
 
-        System.out.println(mainMenu);
-        mainMenu.getInput();
+
     }
 }

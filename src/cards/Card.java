@@ -3,6 +3,8 @@ package cards;
 import cards.enums.Faces;
 import cards.enums.Suits;
 
+import java.io.Console;
+
 
 public class Card {
     Suits suit;
@@ -25,6 +27,14 @@ public class Card {
     }
 
     public String toString() {
-        return suit + "\t" + face;
+        return """
+                _______
+                |%s    |
+                |     |
+                |  %s  |
+                |     |
+                |    %s|
+                |_____|
+                """.formatted(suit.getFormat(), face.getValue(), suit.getFormat());
     }
 }
