@@ -32,8 +32,8 @@ public class WarManager {
 
 
         // get num values of cards
-        int computerValue = computerCard.getFace().getValue();
-        int playerValue = playerCard.getFace().getValue();
+        int computerValue = computerCard.getFace().getWarVal();
+        int playerValue = playerCard.getFace().getWarVal();
 
         state = getState(computerValue, playerValue);
 
@@ -73,8 +73,8 @@ public class WarManager {
 
         System.out.print("\nPlayer: " +  playerCard + "\nComputer: " + computerCard );
 
-        int playerValue = playerCard.getFace().getValue();
-        int computerValue = computerCard.getFace().getValue();
+        int playerValue = playerCard.getFace().getWarVal();
+        int computerValue = computerCard.getFace().getWarVal();
 
         if (playerValue > computerValue) {
             // 2 cards drawn before + 6 cards drawn for war + 2 more drawn for war
