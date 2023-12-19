@@ -5,10 +5,10 @@ import java.util.ArrayList;
 import cards.enums.Faces;
 import cards.enums.Suits;
 
-public class DeckOfCards {
+public class Deck {
     private ArrayList<Card> deck = new ArrayList<Card>();
 
-    public DeckOfCards() {
+    public Deck() {
         for (Suits suit: Suits.values()) { // .values creates an array of the enums
             for (Faces face: Faces.values()) {
                 deck.add(new Card(suit, face));
@@ -16,7 +16,7 @@ public class DeckOfCards {
         }
     }
 
-    public DeckOfCards(int num) {
+    public Deck(int num) {
         Suits[] suits = Suits.values();
         Faces[] faces = Faces.values();
 
