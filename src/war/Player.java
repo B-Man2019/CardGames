@@ -1,8 +1,5 @@
 package war;
 
-import cards.Card;
-import cards.DeckOfCards;
-
 public class Player {
     public Player() {
         // leave empty
