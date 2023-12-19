@@ -28,7 +28,7 @@ public class WarManager {
         Card playerCard = playerDeck.drawCard();
         startCountdown();
 
-        System.out.print(playerCard + "\nPlayer\n" + computerCard + "\nComputer\n");
+        System.out.print("\nPlayer: " +  playerCard + "\nComputer: " + computerCard + "\n");
 
 
         // get num values of cards
@@ -71,7 +71,7 @@ public class WarManager {
         Card computerCard = computerDeck.drawCard();
         Card playerCard = playerDeck.drawCard();
 
-        System.out.print(playerCard + "\nPlayer\n" + computerCard + "\nComputer\n");
+        System.out.print("\nPlayer: " +  playerCard + "\nComputer: " + computerCard );
 
         int playerValue = playerCard.getFace().getValue();
         int computerValue = computerCard.getFace().getValue();
