@@ -1,14 +1,15 @@
 package cards;
 
+import java.security.SecureRandom;
 import java.util.ArrayList;
 
 import cards.enums.Faces;
 import cards.enums.Suits;
 
-public class DeckOfCards {
+public class Deck {
     private ArrayList<Card> deck = new ArrayList<Card>();
 
-    public DeckOfCards() {
+    public Deck() {
         for (Suits suit: Suits.values()) { // .values creates an array of the enums
             for (Faces face: Faces.values()) {
                 deck.add(new Card(suit, face));
@@ -16,7 +17,7 @@ public class DeckOfCards {
         }
     }
 
-    public DeckOfCards(int num) {
+    public Deck(int num) {
         Suits[] suits = Suits.values();
         Faces[] faces = Faces.values();
 
@@ -39,18 +40,18 @@ public class DeckOfCards {
     }
 
     // *****************************
-    // this shuffle method iterates
-    // through each card in the
-    // deck and swaps it with
-    // another random card
+    // I improved the algorithm to
+    // use secure random - more secure
     // *****************************
     public void shuffle() {
-        for (int i = 0; i < deck.size() - 1; i++) {
-                int rand = (int)((Math.random()) * (deck.size()));
+        SecureRandom secureRandom = new SecureRandom();
 
-                Card temp = deck.get(i);
-                deck.set(i, deck.get(rand));
-                deck.set(rand, temp);
+        for (int i = deck.size() - 1; i > 0; i--) {
+            int randIndex = secureRandom.nextInt(i + 1);
+
+            Card temp = deck.get(i);
+            deck.set(i, deck.get(randIndex));
+            deck.set(randIndex, temp);
         }
     }
 

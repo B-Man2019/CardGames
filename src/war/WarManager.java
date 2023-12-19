@@ -1,21 +1,21 @@
 package war;
 
 import cards.Card;
-import cards.DeckOfCards;
+import cards.Deck;
 import io.Menu;
 import war.enums.States;
 
 public class WarManager {
-    private DeckOfCards computerDeck;
-    private DeckOfCards playerDeck;
+    private Deck computerDeck;
+    private Deck playerDeck;
 
     private final Player player = new Player();
     private final Computer computer = new Computer();
 
 
     public WarManager() {
-        playerDeck = new DeckOfCards(26);
-        computerDeck = new DeckOfCards(26);
+        playerDeck = new Deck(26);
+        computerDeck = new Deck(26);
         playerDeck.shuffle();
         computerDeck.shuffle();
         
@@ -28,12 +28,12 @@ public class WarManager {
         Card playerCard = playerDeck.drawCard();
         startCountdown();
 
-        System.out.print(playerCard + "\nPlayer\n" + computerCard + "\nComputer\n");
+        System.out.print("\nPlayer: " +  playerCard + "\nComputer: " + computerCard + "\n");
 
 
         // get num values of cards
-        int computerValue = computerCard.getFace().getValue();
-        int playerValue = playerCard.getFace().getValue();
+        int computerValue = computerCard.getFace().getWarVal();
+        int playerValue = playerCard.getFace().getWarVal();
 
         state = getState(computerValue, playerValue);
 
@@ -71,10 +71,10 @@ public class WarManager {
         Card computerCard = computerDeck.drawCard();
         Card playerCard = playerDeck.drawCard();
 
-        System.out.print(playerCard + "\nPlayer\n" + computerCard + "\nComputer\n");
+        System.out.print("\nPlayer: " +  playerCard + "\nComputer: " + computerCard );
 
-        int playerValue = playerCard.getFace().getValue();
-        int computerValue = computerCard.getFace().getValue();
+        int playerValue = playerCard.getFace().getWarVal();
+        int computerValue = computerCard.getFace().getWarVal();
 
         if (playerValue > computerValue) {
             // 2 cards drawn before + 6 cards drawn for war + 2 more drawn for war

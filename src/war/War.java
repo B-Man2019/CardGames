@@ -1,11 +1,11 @@
 package war;
 
+import cards.Deck;
 import io.Menu;
-import cards.DeckOfCards;
 
 public class War {
     public static void main() {
-        DeckOfCards deck = new DeckOfCards();
+        Deck deck = new Deck();
         deck.drawCard(5);
         WarManager warManager = new WarManager();
 

@@ -27,27 +27,6 @@ public class Card {
     }
 
     public String toString() {
-        if (face.getFormat() != "10") {
-        return """
-                _______
-                |%s    |
-                |     |
-                |  %s  |
-                |     |
-                |    %s|
-                |_____|
-                """.formatted(suit.getFormat(), face.getFormat(), suit.getFormat());
-        } else {
-            return """
-                _______
-                |%s    |
-                |     |
-                |  %s |
-                |     |
-                |    %s|
-                |_____|
-                """.formatted(suit.getFormat(), face.getFormat(), suit.getFormat());
-        }
-
+        return face.getFormat() + " of " + suit.getFormat();
     }
 }
