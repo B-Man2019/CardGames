@@ -1,21 +1,21 @@
 package war;
 
 import cards.Card;
-import cards.DeckOfCards;
+import cards.Deck;
 import io.Menu;
 import war.enums.States;
 
 public class WarManager {
-    private DeckOfCards computerDeck;
-    private DeckOfCards playerDeck;
+    private Deck computerDeck;
+    private Deck playerDeck;
 
     private final Player player = new Player();
     private final Computer computer = new Computer();
 
 
     public WarManager() {
-        playerDeck = new DeckOfCards(26);
-        computerDeck = new DeckOfCards(26);
+        playerDeck = new Deck(26);
+        computerDeck = new Deck(26);
         playerDeck.shuffle();
         computerDeck.shuffle();
         
