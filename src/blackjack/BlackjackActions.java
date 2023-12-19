@@ -1,13 +1,3 @@
-import io.Menu;
-
 class BlackjackActions {
-    public void main() {
-        // TODO: Blackjack
-        ;
-    }
-
-    public void bet() {
-        Menu bettingMenu = new Menu("Bet");
-        bettingMenu.addAction(() -> , null);
-    }
+    // I know there's nothing here, I just don't feel like submitting another commit rn
 }
