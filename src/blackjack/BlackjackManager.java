@@ -49,14 +49,15 @@ class BlackjackManager {
             turnMenu.addAction(() -> exitTurn = true, "Stand");
             turnMenu.addAction(() -> player.hit(), "Hit");
             turnMenu.addAction(() -> System.exit(0), "Quit");
+          if (player.numCards() == 2) {
+              turnMenu.addAction(() -> doubleDown(), "Double Down");
+              turnMenu.addAction(() -> surrender(), "Surrender");
+          }
 
             System.out.println(turnMenu);
             turnMenu.getInput();
 
-            if (player.numCards() == 2) {
-                turnMenu.addAction(() -> doubleDown(), "Double Down");
-                turnMenu.addAction(() -> surrender(), "Surrender");
-            }
+
         }
 
         States dealerState = dealer.doTurn();
